@@ -39,7 +39,10 @@ class HeirShare(BaseModel):
     percentage: Optional[str] = Field(None, description="Persentase bagian")
     is_mahjub: bool = Field(False, description="Apakah terhalang (mahjub)")
     mahjub_reason: Optional[str] = Field(None, description="Alasan terhalang")
-    
+    individual_amount: Optional[float] = Field(
+        None, 
+        description="Jumlah per individu (jika quantity > 1)"
+    )
     class Config:
         json_schema_extra = {
             "example": {
